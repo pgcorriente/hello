@@ -16,7 +16,10 @@ jobs:
             source ~/.hello/bin/activate
       - run:
           name: Install dependencies
-          command: make install
+          command: | 
+            make install &&
+            which python &&
+            which pylint            
       - python/save-cache
       - run:
           name: Lint 
