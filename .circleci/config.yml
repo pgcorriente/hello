@@ -8,14 +8,14 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
+#      - python/load-cache
       - run:
           name: Install dependencies
           command: | 
             make install &&
             which python &&
             which pylint            
-      - python/save-cache
+#      - python/save-cache
       - run:
           name: Lint 
           command: make lint
